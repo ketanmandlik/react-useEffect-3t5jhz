@@ -16,16 +16,16 @@ export default function App() {
     console.log('I am render once only when the component is Mounted!');
   }, []);
 
-  //On First Render + Whenever the dependency changes.
-  //componentDidUpdate alternative
-  // useEffect(() => {
-  //   console.log(`My Name is: ${name}`);
+  // On First Render + Whenever the dependency changes.
+  // componentDidUpdate alternative
+  useEffect(() => {
+    console.log(`My Name is: ${name}`);
 
-  //   return () => {
-  //     //Clean up...
-  //     console.log('We Unmounted!', name);
-  //   };
-  // }, [name]);
+    return () => {
+      //Clean up...
+      console.log('We Unmounted!', name);
+    };
+  }, [name]);
 
   // First way to attached and de-attached listner or cleanup
   useEffect(() => {
